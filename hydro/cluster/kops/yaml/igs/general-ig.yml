@@ -29,4 +29,22 @@ spec:
     role: general
   subnets:
     - us-east-1a
+  additionalPolicies:
+    master: |
+      [
+        {
+          "Effect": "Allow",
+          "Action": [ "iam:CreateServiceLinkedRole"],
+          "Resource": ["*"]
+        },
+        {
+          "Effect": "Allow",
+          "Action": [
+            "ec2:DescribeAccountAttributes",
+            "ec2:DescribeInternetGateways"
+           ],
+          "Resource": "*"
+        }
+      ]
+
 
