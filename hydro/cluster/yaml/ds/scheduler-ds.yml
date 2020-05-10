@@ -33,8 +33,9 @@ spec:
       hostIPC: true
       containers:
       - name: scheduler-container
-        image: hydroproject/cloudburst
+        image: alicelol/lasttry:3.0
         imagePullPolicy: Always
+        command: [ "bash", "start-cloudburst.sh"]
         env:
         - name: ROUTE_ADDR
           value: ROUTE_ADDR_DUMMY
